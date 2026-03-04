@@ -72,13 +72,15 @@ const dayColors = {
 };
 
 export default function DevDayPredictor() {
-  const [selectedDay, setSelectedDay] = useState(null);
-  const [prediction, setPrediction] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [currentAI, setCurrentAI] = useState(0);
-  const [aiProgress, setAiProgress] = useState(0);
-  const [particles, setParticles] = useState([]);
-  const [glitchActive, setGlitchActive] = useState(false);
+  type Particle = { id: number; x: number; y: number; size: number; speed: number; delay: number };
+
+  const [selectedDay, setSelectedDay] = useState<string | null>(null);
+  const [prediction, setPrediction] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
+  const [currentAI, setCurrentAI] = useState<number>(0);
+  const [aiProgress, setAiProgress] = useState<number>(0);
+  const [particles, setParticles] = useState<Particle[]>([]);
+  const [glitchActive, setGlitchActive] = useState<boolean>(false);
 
   useEffect(() => {
     const pts = Array.from({ length: 20 }, (_, i) => ({
@@ -717,6 +719,12 @@ export default function DevDayPredictor() {
               </div>
             )}
           </div>
+
+          {!loading && prediction && (
+            <p style={{ textAlign: "center", fontSize: "10px", color: "rgba(224,232,240,0.2)", marginTop: "12px", letterSpacing: "1px" }}>
+              *accuracy not real. predictions may vary. not liable for Monday feelings.
+            </p>
+          )}
         </div>
       </div>
     </>
