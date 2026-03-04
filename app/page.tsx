@@ -1,8 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, CSSProperties } from "react";
 
-const developerPredictions = {
+type CSSWithVars = CSSProperties & { [key: `--${string}`]: string | number };
+
+const developerPredictions: Record<string, string[]> = {
   Monday: [
     "You will fix one bug and create two new ones. Net progress: -1 bug 😄",
     "You'll spend 47 minutes finding a missing semicolon. Worth it.",
@@ -51,7 +53,7 @@ const aiTools = [
   { name: "Perplexity", icon: "🌐", color: "#20b2aa" },
 ];
 
-const dayEmojis = {
+const dayEmojis: Record<string, string> = {
   Monday: "😩",
   Tuesday: "🌿",
   Wednesday: "⚡",
@@ -61,7 +63,7 @@ const dayEmojis = {
   Sunday: "☕",
 };
 
-const dayColors = {
+const dayColors: Record<string, { from: string; accent: string }> = {
   Monday:   { from: "#1a1a2e", accent: "#e94560" },
   Tuesday:  { from: "#0f2027", accent: "#43e97b" },
   Wednesday:{ from: "#1a1a2e", accent: "#f7971e" },
@@ -94,7 +96,7 @@ export default function DevDayPredictor() {
     setParticles(pts);
   }, []);
 
-  const handleClick = (day) => {
+  const handleClick = (day: string) => {
     if (loading) return;
     setSelectedDay(day);
     setPrediction("");
@@ -602,7 +604,7 @@ export default function DevDayPredictor() {
         }
       `}</style>
 
-      <div className="app" style={{ "--accent": activeAccent }}>
+      <div className="app" style={{ "--accent": activeAccent } as CSSWithVars}>
         <div className="grid-bg" />
         <div className="scanline" />
 
@@ -643,7 +645,7 @@ export default function DevDayPredictor() {
                 <button
                   key={day}
                   className={`day-card ${isActive ? "active" : ""}`}
-                  style={{ "--accent": accent }}
+                  style={{ "--accent": accent } as CSSWithVars}
                   onClick={() => handleClick(day)}
                 >
                   {isActive && <div className="active-indicator" style={{ background: accent, boxShadow: `0 0 8px ${accent}` }} />}
@@ -659,7 +661,7 @@ export default function DevDayPredictor() {
           <div className="result-area">
             {/* Loading */}
             {loading && (
-              <div className="loading-card" style={{ "--accent": activeAccent }}>
+              <div className="loading-card" style={{ "--accent": activeAccent } as CSSWithVars}>
                 <div className="loading-header">
                   <div className="spinner-ring" />
                   <div>
@@ -673,7 +675,7 @@ export default function DevDayPredictor() {
                 <div className="ai-chips">
                   {aiTools.map((ai, idx) => (
                     <div key={ai.name} className={`ai-chip ${idx === currentAI ? "active-chip" : ""}`}
-                      style={idx === currentAI ? { "--accent": ai.color, borderColor: ai.color, color: ai.color } : {}}>
+                      style={idx === currentAI ? { "--accent": ai.color, borderColor: ai.color, color: ai.color } as CSSWithVars : {}}>
                       {ai.icon} {ai.name}
                     </div>
                   ))}
@@ -695,7 +697,7 @@ export default function DevDayPredictor() {
                 "--accent": dayColors[selectedDay].accent,
                 background: `linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%)`,
                 borderColor: `rgba(${hexToRgb(dayColors[selectedDay].accent)}, 0.3)`,
-              }}>
+              } as CSSWithVars}>
                 <div className="result-header" style={{
                   background: `linear-gradient(135deg, ${dayColors[selectedDay].accent}15, transparent)`,
                 }}>
@@ -731,7 +733,7 @@ export default function DevDayPredictor() {
   );
 }
 
-function hexToRgb(hex) {
+function hexToRgb(hex: string) {
   const r = parseInt(hex.slice(1, 3), 16);
   const g = parseInt(hex.slice(3, 5), 16);
   const b = parseInt(hex.slice(5, 7), 16);
