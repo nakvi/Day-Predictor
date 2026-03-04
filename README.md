@@ -7,7 +7,7 @@ Pick a day. Watch 8 fake AIs argue. Get your destiny (it's 99.9% accurate\*).
 
 *\*accuracy not real. not liable for Monday feelings.*
 
-[🚀 Live Demo](#)
+[🚀 Live Demo](https://day-predictor-blush.vercel.app/)
 
 </div>
 
