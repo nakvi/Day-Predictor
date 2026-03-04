@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🤖 Developer Day Predictor
 
-## Getting Started
+<div align="center">
 
-First, run the development server:
+**A hilariously fake AI-powered day predictor for developers.**  
+Pick a day. Watch 8 fake AIs argue. Get your destiny (it's 99.9% accurate\*).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+*\*accuracy not real. not liable for Monday feelings.*
+
+[🚀 Live Demo](#)
+
+</div>
+
+---
+
+## ✨ Features
+
+- 🧠 **8 Fake AI Models** — GPT-5, Claude, Gemini, Grok, Mistral, Llama, DeepSeek & Perplexity all "analyze" your day simultaneously
+- 🎨 **Unique Day Themes** — Each day of the week has its own accent color that ripples across the entire UI
+- ⚡ **Retro Terminal Aesthetic** — Scanlines, floating particles, grid background, and glitch effects
+- 📱 **Fully Mobile Responsive** — 2-column grid on mobile, scales beautifully up to desktop
+- 🔮 **Live Progress Bar** — Watch the neural analysis reach 100% in real time (it's fake, but it feels real)
+- 💬 **Multiple Predictions Per Day** — Random selection from a pool of developer-specific prophecies
+- 🖥️ **Animated Loading State** — AI chip switcher cycles through all 8 models with color-coded highlights
+
+---
+
+## 📸 Preview
+
+```
+┌─────────────────────────────────────────┐
+│  v2.0 · 8 AI Models · 100% Fake™       │
+│                                         │
+│   Developer Day                         │
+│   Predictor█                            │
+│                                         │
+│  [ 😩 Monday ] [ 🌿 Tuesday ] ...       │
+│  [ ⚡ Wednesday ] [ 🔥 Thursday ]        │
+│  [ 🎉 Friday ] [ 😴 Saturday ]          │
+│  [ ☕ Sunday ]                           │
+│                                         │
+│  ✅ You will fix one bug and create     │
+│     two new ones. Net progress: -1 bug  │
+└─────────────────────────────────────────┘
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Prerequisites
 
-## Learn More
+- Node.js `18+`
+- npm or yarn
 
-To learn more about Next.js, take a look at the following resources:
+### Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Clone the repository
+git clone https://github.com/nakvi/Day-Predictor.git
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Navigate into the project
+cd developer-day-predictor
 
-## Deploy on Vercel
+# Install dependencies
+npm install
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Start the development server
+npm run dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open [http://localhost:3000](http://localhost:3000) in your browser. You're now receiving fate.
+
+---
+
+## 🗂️ Project Structure
+
+```
+developer-day-predictor/
+├── app/
+│   └── page.jsx          # Main component (DevDayPredictor)
+├── public/               # Static assets
+├── package.json
+└── README.md
+```
+
+---
+
+## 🤖 The AI Council
+
+| Model | Icon | Speciality |
+|---|---|---|
+| GPT-5 | 🤖 | General existential dread |
+| Claude | 🧠 | Overthinking your semicolons |
+| Gemini | ✨ | Sparkly, unhelpful suggestions |
+| Grok | ⚡ | Chaotic neutral predictions |
+| Mistral | 🌀 | European pessimism |
+| Llama | 🦙 | Open-source suffering |
+| DeepSeek | 🔍 | Finding bugs you didn't know existed |
+| Perplexity | 🌐 | Citing Stack Overflow from 2009 |
+
+---
+
+## 🎨 Day Themes
+
+| Day | Emoji | Accent Color |
+|---|---|---|
+| Monday | 😩 | `#e94560` Red |
+| Tuesday | 🌿 | `#43e97b` Green |
+| Wednesday | ⚡ | `#f7971e` Orange |
+| Thursday | 🔥 | `#f953c6` Pink |
+| Friday | 🎉 | `#00d2ff` Cyan |
+| Saturday | 😴 | `#a18cd1` Purple |
+| Sunday | ☕ | `#ffd700` Gold |
+
+---
+
+## 📄 License
+
+MIT © [Toseeq Naqvi ](https://github.com/nakvi)
+
+---
